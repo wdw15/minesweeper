@@ -1,0 +1,3 @@
+- Time spent ~4hours total
+- I misunderstood the assignment initially and built my own random minefields... however I think I got back on track.
+- Not a lot of error checking and some potential for bugs as I didn't unit test
