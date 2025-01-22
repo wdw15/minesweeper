@@ -61,11 +61,13 @@ class MineSweeperGenerator:
 
 
 class MineSweeperFactory:
-    def __init__(self, input_file='minesweeper_input.txt'):
+    def __init__(self, input_file='minesweeper_input_TC.txt', output_file='minesweeper_output.txt'):
         """Generic factory class to store several minesweeper fields"""
         with open(input_file, 'r') as f:
             self.input_lines = f.readlines()
 
+        self.output_file = output_file
+        self.input_file = input_file
         self.fields = {}
         self.field_obj = {}
         self.build_fields()
@@ -100,19 +102,14 @@ class MineSweeperFactory:
             i+=1
             output+=f'Field #{i}: {field.display()}\n\n'
 
-        with open('minesweeper_ouput.txt', 'w') as f:
+        with open(self.output_file, 'w') as f:
             f.write(output)
 
 
 
-
-if __name__ == '__main__':
-
-    play = MineSweeperFactory()
-    play.display_all()
-
-
-
+# if __name__ == '__main__':
+#     play = MineSweeperFactory('minefields.txt', 'minesweeper_output.txt')
+#     play.display_all()
 
 
 
